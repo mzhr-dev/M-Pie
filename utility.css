@@ -1,0 +1,46 @@
+/* All these classes are utility classes. They are used to apply some common styles to the elements */
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+ .align-center {
+    align-items: center;
+}
+
+.border {
+    border: 1px solid red;
+    margin: 3px;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.bg-gray {
+    background-color: #2e2e2e;
+}
+
+.green {
+    color: #1db954;
+}
+
+.p1 {
+    padding: 10px;
+}
+
+.m1 {
+    margin: 10px;
+}
+
+.rounded {
+    border-radius: 5px;
+}
