@@ -1,76 +1,282 @@
+/* Styling the Scrollbar for Webkit Browsers (Chrome, Safari, Edge) */
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Targeting the scrollbar itself */
+*::-webkit-scrollbar {
+  width: 8px; /* Smaller width for the scrollbar */
+  height: 8px; /* Height for the horizontal scrollbar */
 }
+
+/* Styling the thumb (the draggable part of the scrollbar) */
+*::-webkit-scrollbar-thumb {
+  background-color: #444; /* Dark color for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid #2b2b2b; /* Optional border to create space between thumb and track */
+}
+
+/* Hover state for the thumb */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #666; /* Slightly lighter on hover */
+}
+
+/* Styling the scrollbar track (the area the thumb moves within) */
+*::-webkit-scrollbar-track {
+  background-color: #222; /* Dark track color */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Styling the Scrollbar for Firefox */
+
+/* Thin and dark-themed scrollbar for Firefox */
+* {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #444 #222; /* Dark thumb and track color for Firefox */
+}
+
+/* removing default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* Styling the body */
 
 body {
-    background-color: black;
-    /* color: white; */
-
+  background-color: black;
+  color: white;
 }
+
+.container {
+  display: flex;
+  height: 100vh;
+  gap: 10px;
+}
+
+/* Styling left side of the container */
 
 .left {
-    width: 25vw;
-}
-
-.right {
-    width: 75vw;
+  width: 25vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo img {
-    width: 25px;
-    cursor: pointer;
+  width: 25px;
+  cursor: pointer;
 }
 
 .logo h5 {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    cursor: pointer;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
+.home {
+  flex-grow: 0;
+}
 
 .home ul {
-    margin-top: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .home ul li {
-    color: white;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    margin-bottom: 5px;
-    padding: 5px;
-    cursor: pointer;
-    font-weight: 550;
+  color: white;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  margin-bottom: 5px;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .home ul li i {
-    margin-right:10px;
-    font-size: large;
+  margin-right: 10px;
+  font-size: large;
+}
+
+.library {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  flex-grow: 1;
 }
 
 .heading {
-    align-items: center;
-    gap: 10px;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 0;
 }
 
 .heading img {
-    width: 25px;
+  width: 25px;
 }
 
 .heading h3 {
-    color: white;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-size: medium;
-    letter-spacing: 0.8px;
+  color: white;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
+.libraryItems {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex-grow: 1;
+}
+
+.libraryItems ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.libraryItems ul li {
+  color: white;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 10px 10px 10px;
+  border: 1px transparent;
+}
+
+.libraryItems ul li:hover {
+  background: lightgray;
+  color: black;
+}
+.libraryFooter {
+  margin-bottom: auto;
+  flex-grow: 0;
+  padding: 5px 0px;
+}
+
+.libraryFooter ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 10px;
+}
+
+.libraryFooter ul li {
+  color: grey;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styling right side of the container */
+
+.right {
+  width: 75vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 10px 15px;
+  background-color: #282828;
+  gap: 10px;
+}
+
+.rightHeader .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.rightHeaderBtns button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.rightHeaderBtns button:hover {
+  background-color: #45a049;
+}
+
+/* Styling main content of the right side */
+
+.spotifyPlaylist {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.spotifyPlaylist h1 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  margin: 10px 0px;
+}
+
+.cardContainer {
+  display: flex;
+  column-gap: 10px;
+  row-gap: 15px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #282828;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 160px;
+}
+
+.card img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: white;
+  overflow: hidden;
+}
+
+.card p {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: small;
+  color: grey;
+  overflow: hidden;
+}
+
+
+
