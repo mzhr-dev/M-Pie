@@ -116,6 +116,7 @@ body {
   flex-direction: column;
   margin-top: 10px;
   flex-grow: 1;
+  overflow: auto;
 }
 
 .heading {
@@ -338,4 +339,36 @@ body {
   100% {
     transform: translateX(-50%) translateY(0); /* End at the original position */
   }
+}
+
+
+/* Styling Music Player of the Application*/
+
+.musicplayer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 15px 10px 15px;
+  background-color: #6b6b6b;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.playButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.playButtons .fa-play {
+  font-size: 35px;
+  cursor: pointer;
+  color: #4caf50;
+}
+
+.playButtons .fa-circle-chevron-left, .fa-circle-chevron-right {
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(216, 216, 216);
 }
