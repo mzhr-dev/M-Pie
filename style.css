@@ -1,39 +1,34 @@
-/* Example: Adding the "Roboto" font */
+/* Adding the "Roboto" font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-/* Styling the Scrollbar for Webkit Browsers (Chrome, Safari, Edge) */
-
-/* Targeting the scrollbar itself */
-*::-webkit-scrollbar {
-  width: 8px; /* Smaller width for the scrollbar */
-  height: 8px; /* Height for the horizontal scrollbar */
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px; /* Added base radius */
 }
 
-/* Styling the thumb (the draggable part of the scrollbar) */
-*::-webkit-scrollbar-thumb {
-  background-color: #444; /* Dark color for the thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
-  border: 3px solid #2b2b2b; /* Optional border to create space between thumb and track */
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 5px;
 }
 
-/* Hover state for the thumb */
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #666; /* Slightly lighter on hover */
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
 }
 
-/* Styling the scrollbar track (the area the thumb moves within) */
-*::-webkit-scrollbar-track {
-  background-color: #222; /* Dark track color */
-  border-radius: 10px; /* Rounded corners for the track */
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
 }
 
-/* Styling the Scrollbar for Firefox */
-
-/* Thin and dark-themed scrollbar for Firefox */
+/* For Firefox */
 * {
-  scrollbar-width: thin; /* Thin scrollbar */
-  scrollbar-color: #444 #222; /* Dark thumb and track color for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #333 #1a1a1a;
+  border-radius: 5px; /* This will affect Firefox's scrollbar but NOT its shape */
 }
+
 
 /* removing default margin and padding and setting default font*/
 * {
@@ -49,6 +44,7 @@
 body {
   background-color: black;
   color: white;
+  height: 100%;
 }
 
 .container {
@@ -61,7 +57,7 @@ body {
 
 .left {
   width: 25vw;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -116,13 +112,18 @@ body {
   flex-direction: column;
   margin-top: 10px;
   flex-grow: 1;
-  overflow: auto;
+  padding: 0px 10px 0px 10px;
+  overflow: hidden;
 }
 
 .heading {
   align-items: center;
+  padding: 10px;
   gap: 10px;
   flex-grow: 0;
+  position: sticky;
+  top: 0px;
+  background-color: rgb(255, 227, 227);
 }
 
 .heading img {
@@ -135,39 +136,98 @@ body {
   font-size: medium;
 }
 .libraryItems {
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 13px;
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 .libraryItems ul {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+
 }
 
 .libraryItems ul li {
-  color: white;
+  display: flex;
+  gap: 15px;
+  align-items: center;
   list-style: none;
   font-family: "Roboto", sans-serif;
   font-size: small;
   margin-bottom: 5px;
   cursor: pointer;
   font-weight: 500;
-  padding: 10px 10px 10px 10px;
-  border: 1px transparent;
+  padding: 5px 10px 5px 10px;
+  transition: all 0.3s ease;
 }
 
-.libraryItems ul li:hover {
-  background: lightgray;
-  color: black;
+.libraryItems .fa-music {
+  font-size: large;
+  padding: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: lightgrey;
+  background-color: grey;
+  border-radius: 5px;
 }
+
+.libraryItems ul li:hover .fa-music {
+  color: rgb(59, 59, 59);
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.songListInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 5px 0px 5px 0px;
+  flex-grow: 1;
+}
+
+.songListInfo h3 {
+  color: lightgrey;
+  font-family: "poppins", sans-serif;
+  font-weight: 550;
+  font-size: 0.9rem;
+  transition: all 0.3 ease;
+}
+
+.libraryItems ul li:hover h3{
+  color: white;
+}
+.songListInfo p {
+  color: grey;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  font-weight: 300;
+}
+
+.libraryItems ul li .fa-play {
+  font-size: medium;
+  color: grey;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.libraryItems ul li:hover .fa-play {
+  color: #1db954;
+}
+
+/* styling footer section inside library */
+
 .libraryFooter {
   margin-bottom: auto;
   flex-grow: 0;
   padding: 5px 0px;
+  position: sticky;
+  bottom: 0px;
+  background-color: #2e2e2e;
+  padding: 10px 0px 10px 0px;
 }
 
 .libraryFooter ul {
@@ -176,6 +236,7 @@ body {
   flex-wrap: wrap;
   column-gap: 15px;
   row-gap: 10px;
+  justify-content: center;
 }
 
 .libraryFooter ul li {

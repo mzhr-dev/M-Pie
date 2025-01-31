@@ -50,3 +50,8 @@
     font-size: 20px;
 }
 
+.no-wrap {
+    /* white-space: nowrap;  Prevents text from wrapping */
+    overflow: hidden;      /* Hides overflowed content */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+  }

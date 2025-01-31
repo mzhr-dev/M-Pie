@@ -19,17 +19,35 @@ async function fetchSongs() {
 
 //getSongs function that will call fetchSongs function and log the songs
 async function getSongs() {
-    let songs = await fetchSongs();
-    console.log(songs);
+  let songs = await fetchSongs();
+  let audio = new Audio(songs[0]);
+  audio.addEventListener("loadeddata", async () => {
+    let duration = await audio.duration;
+    console.log(duration);
+  });
 
-    // play the first song
-    let audio = new Audio(songs[0]);
-    audio.play();
+  let songsUl = document.getElementById("playlist");
+  
 
-    audio.addEventListener ('loadeddata', () => {
-        let duration = audio.duration;
-        console.log (duration);
-    });
+  for (let song of songs) {
+    let songTitle = song.split("/songs/")[1].split(".mp3")[0].replaceAll('-', ' ');
+    console.log(songTitle, 'before loop')
+    if (songTitle.length > 26) {
+      songTitle = songTitle.slice(0 , 26).concat(" ...")
+    }
+
+    console.log(songTitle, 'after loop');
+
+    let li = document.createElement("li");
+
+    li.innerHTML = `<i class="fa-solid fa-music"></i>
+                <div class="songListInfo">
+                  <h3 class= "no-wrap">${songTitle}</h3>
+                  <p>Artist: -Mazhar-Khan-</p>
+                </div>
+                <i class="fa-solid fa-play rounded"></i>`;
+
+    songsUl.appendChild(li);
+  }
 }
- 
 getSongs();
