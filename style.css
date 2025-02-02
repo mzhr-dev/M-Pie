@@ -142,6 +142,8 @@ body {
   gap: 13px;
   flex-grow: 1;
   overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .libraryItems ul {
@@ -163,6 +165,7 @@ body {
   font-weight: 500;
   padding: 5px 10px 5px 10px;
   transition: all 0.3s ease;
+  max-width: 100%;
 }
 
 .libraryItems .fa-music {
@@ -187,6 +190,7 @@ body {
   gap: 3px;
   padding: 5px 0px 5px 0px;
   flex-grow: 1;
+  max-width: 65%;
 }
 
 .songListInfo h3 {
@@ -195,6 +199,9 @@ body {
   font-weight: 550;
   font-size: 0.9rem;
   transition: all 0.3 ease;
+  white-space: nowrap;        /* Prevent text from wrapping */
+  overflow: hidden;           /* Hide overflowed text */
+  text-overflow: ellipsis;    /* Add ellipsis (...) when the text overflows */
 }
 
 .libraryItems ul li:hover h3{
@@ -227,25 +234,29 @@ body {
   position: sticky;
   bottom: 0px;
   background-color: #2e2e2e;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 5px 10px 5px;
 }
 
 .libraryFooter ul {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 15px;
+  column-gap: 20px;
   row-gap: 10px;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .libraryFooter ul li {
   color: grey;
   cursor: pointer;
-  font-size: 15px;
-  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 600px;
+  transition: all 0.3s ease;
 }
 
+.libraryFooter ul li:hover {
+  color: white;
+}
 /* Styling right side of the container */
 
 .right {
@@ -262,6 +273,7 @@ body {
   padding: 10px 15px 10px 15px;
   background-color: #282828;
   gap: 10px;
+  flex-grow: 0;
 }
 
 .rightHeader .nav {
@@ -290,10 +302,12 @@ body {
 
 .spotifyPlaylist {
   margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   overflow-y: auto;
+  align-content: flex-start;
   flex-grow: 1;
 }
 
@@ -320,9 +334,10 @@ body {
   padding: 10px;
   background-color: #282828;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   width: 160px;
   position: relative;
+  max-height: fit-content;
 }
 
 .card:hover {
@@ -404,14 +419,24 @@ body {
 
 
 /* Styling Music Player of the Application*/
+.mediaPlayer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  background-color: rgb(211, 211, 211);
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  margin-bottom: auto;
+  flex-grow: 0;
 
-.musicplayer {
+}
+.playerElements {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-top: 10px;
-  padding: 10px 15px 10px 15px;
-  background-color: #6b6b6b;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -431,5 +456,32 @@ body {
 .playButtons .fa-circle-chevron-left, .fa-circle-chevron-right {
   font-size: 25px;
   cursor: pointer;
-  color: rgb(216, 216, 216);
+  color: rgb(70, 70, 70);
+}
+
+.seekBar {
+  width: 100%; /* Full width of the container */
+  height: 4px; /* Height of the seek bar track */
+  background-color: rgb(48, 48, 48); /* Track color */
+  position: relative;
+  margin-top: 10px; /* Space between buttons and seek bar */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.seekBar:hover {
+  background-color: #1db954;
+}
+
+.seekBar .circle {
+  height: 15px;
+  width: 15px;
+  background-color: #1db954; /* Handle color */
+  border-radius: 50%; /* Perfect circle */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0; /* Start from the left */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  cursor: pointer; /* Indicate it's draggable */
+  transition: all 0.5s ease;
 }

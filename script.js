@@ -1,4 +1,4 @@
-// Fetching songs from the local server
+// Fetching & Parsing the songs from the local server
 async function fetchSongs() {
   let a = await fetch("http://127.0.0.1:5500/songs/");
   let data = await a.text();
@@ -19,25 +19,25 @@ async function fetchSongs() {
 
 //getSongs function that will call fetchSongs function and log the songs
 async function getSongs() {
+
+  let currentSong;
+
   let songs = await fetchSongs();
   let audio = new Audio(songs[0]);
-  audio.addEventListener("loadeddata", async () => {
-    let duration = await audio.duration;
-    console.log(duration);
-  });
-
-  let songsUl = document.getElementById("playlist");
   
+  //Showing all the songs inside the playlist
+  let songsUl = document.getElementById("playlist");
 
   for (let song of songs) {
+
+    //extracting title from url
     let songTitle = song.split("/songs/")[1].split(".mp3")[0].replaceAll('-', ' ');
-    console.log(songTitle, 'before loop')
-    if (songTitle.length > 26) {
-      songTitle = songTitle.slice(0 , 26).concat(" ...")
-    }
 
-    console.log(songTitle, 'after loop');
+    // if (songTitle.length > 26) {
+    //   songTitle = songTitle.slice(0 , 26).concat(" ...")
+    // }
 
+    //creating element inside playlist for each song
     let li = document.createElement("li");
 
     li.innerHTML = `<i class="fa-solid fa-music"></i>
@@ -49,5 +49,15 @@ async function getSongs() {
 
     songsUl.appendChild(li);
   }
+
+  
+  // //Attaching an event Listner to each song
+  Array.from(document.querySelector("#playlist").getElementsByTagName('li')).forEach((e)=>{
+    let h3Element = e.getElementsByTagName("h3")[0].innerText;
+    console.log(h3Element)
+  })
+
 }
+
+//calling the main function "getSongs"
 getSongs();
