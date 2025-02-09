@@ -17,10 +17,17 @@ async function fetchSongs() {
   return songs;
 }
 
-//getSongs function that will call fetchSongs function and log the songs
-async function getSongs() {
+let currentSong = new Audio() //defining current song variable
 
-  let currentSong;
+//defining playMusic function.
+const playMusic = (audio)=> {
+  currentSong.src = audio 
+  currentSong.play()
+}
+
+//getSongs function that will call fetchSongs function and log the songs
+async function main() {
+
 
   let songs = await fetchSongs();
   let audio = new Audio(songs[0]);
@@ -45,19 +52,24 @@ async function getSongs() {
                   <h3 class= "no-wrap">${songTitle}</h3>
                   <p>Artist: -Mazhar-Khan-</p>
                 </div>
-                <i class="fa-solid fa-play rounded"></i>`;
+                <i class="fa-solid fa-pause rounded"></i>`;
 
     songsUl.appendChild(li);
   }
 
   
   // //Attaching an event Listner to each song
-  Array.from(document.querySelector("#playlist").getElementsByTagName('li')).forEach((e)=>{
-    let h3Element = e.getElementsByTagName("h3")[0].innerText;
-    console.log(h3Element)
+  Array.from(document.querySelector('#playlist').getElementsByTagName('li')).forEach(e=> {
+    let eachSong = e.getElementsByClassName('songListInfo')[0].getElementsByTagName('h3')[0];
+    let song = 'http://127.0.0.1:5500/songs/'+ eachSong.innerText + '.mp3'
+    let songURL = song.replaceAll(' ', '-');
+
+    e.addEventListener ('click', element=> {
+      playMusic(songURL);
+    })
   })
 
 }
 
 //calling the main function "getSongs"
-getSongs();
+main();
