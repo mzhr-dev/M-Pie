@@ -17,21 +17,27 @@ async function fetchSongs() {
   return songs;
 }
 
+let play = document.getElementById('playBtn') //selecting media player button
 let currentSong = new Audio() //defining current song variable
 
 //defining playMusic function.
-const playMusic = (audio)=> {
+const playMusic = (audio, pause= false)=> {
   currentSong.src = audio 
-  currentSong.play()
+  if (!pause) {
+    currentSong.play()
+    play.className = "fa-solid fa-pause"
+  }
+
+  currentSongTitle = document.querySelector('.currentSongTitle').getElementsByTagName('h3')[0]
+  currentSongTitle.innerText = audio.split("/songs/")[1].split(".mp3")[0].replaceAll('-', ' ');
 }
 
 //getSongs function that will call fetchSongs function and log the songs
 async function main() {
 
-
   let songs = await fetchSongs();
-  let audio = new Audio(songs[0]);
-  
+  playMusic(songs[0], pause= true)
+
   //Showing all the songs inside the playlist
   let songsUl = document.getElementById("playlist");
 
@@ -39,10 +45,6 @@ async function main() {
 
     //extracting title from url
     let songTitle = song.split("/songs/")[1].split(".mp3")[0].replaceAll('-', ' ');
-
-    // if (songTitle.length > 26) {
-    //   songTitle = songTitle.slice(0 , 26).concat(" ...")
-    // }
 
     //creating element inside playlist for each song
     let li = document.createElement("li");
@@ -52,7 +54,7 @@ async function main() {
                   <h3 class= "no-wrap">${songTitle}</h3>
                   <p>Artist: -Mazhar-Khan-</p>
                 </div>
-                <i class="fa-solid fa-pause rounded"></i>`;
+                <i id="libraryPlayBtn" class= "fa-solid fa-play rounded"></i>`;
 
     songsUl.appendChild(li);
   }
@@ -67,9 +69,52 @@ async function main() {
     e.addEventListener ('click', element=> {
       playMusic(songURL);
     })
+
+    //Attach an eventListner to play pause and previous
+    
+    play.addEventListener('click', ()=> {
+      if (currentSong.paused) {
+        currentSong.play()
+        play.className = "fa-solid fa-pause";
+      } 
+      else {
+          currentSong.pause()
+          play.className = "fa-solid fa-play";
+      }
+    })
   })
 
+  function secondsToMinutes(seconds) {
+    // Calculate minutes and seconds
+    let minutes = Math.floor(seconds / 60);
+    let remainingSeconds = Math.round(seconds % 60);
+
+    // Format seconds to always show two digits (e.g., 09 instead of 9)
+    minutes = minutes < 10 ? '0' + minutes : minutes; 
+    remainingSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+  
+    // Return the formatted string
+    return `${minutes}:${remainingSeconds}`;
+  }
+  
+  //Listen for timeupdate event
+  currentSong.addEventListener("timeupdate", ()=> {
+    
+    let currSongTime = document.getElementById('currSongTime') // targetting current song time from media player
+    currSongTime.innerText = `${secondsToMinutes(currentSong.currentTime)} / ${secondsToMinutes(currentSong.duration)}`
+    
+    // targetting circle on the seekbar
+    let circle = document.getElementById('seekBarCircle')
+    circle.style.left = (currentSong.currentTime/ currentSong.duration) * 100 + "%";
+  })
+
+  // Add an event Listner to seekbar
+  let seekBar = document.getElementById('seekBar');
+  seekBar.addEventListener('click', (e)=> {
+    console.log(e.offsetX)
+  })
 }
 
-//calling the main function "getSongs"
+
+//calling the main function
 main();
