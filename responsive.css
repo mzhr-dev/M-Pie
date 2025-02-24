@@ -1,0 +1,10 @@
+
+@media (width <= 1024px) {
+    .left {
+        width: 30vw;
+    }
+
+    .right {
+        width: 70vw;
+    }
+  }

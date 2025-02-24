@@ -106,13 +106,20 @@ async function main() {
     // targetting circle on the seekbar
     let circle = document.getElementById('seekBarCircle')
     circle.style.left = (currentSong.currentTime/ currentSong.duration) * 100 + "%";
+    
+    // Add an event Listner to seekbar
+    let seekBar = document.getElementById('seekBar');
+    seekBar.addEventListener('click', (e)=> {
+      console.log(e.offsetX)
+      let perctage = (e.offsetX / 1009) * 100;
+      circle.style.left = (e.offsetX / 1000) * 100 + "%"; // updating circle position on click
+      currentSong.currentTime = (perctage / 100) * currentSong.duration // update current song duration on seekbar click event
+    
+    // add an eventListner to dragevent
+    
+    })
   })
 
-  // Add an event Listner to seekbar
-  let seekBar = document.getElementById('seekBar');
-  seekBar.addEventListener('click', (e)=> {
-    console.log(e.offsetX)
-  })
 }
 
 
