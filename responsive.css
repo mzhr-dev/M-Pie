@@ -1,5 +1,5 @@
 
-@media (width <= 1024px) {
+@media (width <= 1200px) {
     .left {
         width: 30vw;
     }
@@ -8,3 +8,53 @@
         width: 70vw;
     }
   }
+
+
+@media (width <= 900px) {    
+
+    .container{
+        padding: 0%;
+        gap: 0px;
+    }
+
+    .left {
+        background-color: rgb(29, 29, 29);
+        padding: 10px;
+        width: 50vw;
+        height: 100%;
+        border-radius: 0px;
+        z-index: 4;
+        position: absolute;
+        transform: translateX(-110%)
+    }
+    .right {
+        width: 100%;
+        height: 100%;
+    }
+    .rightHeader .nav .hamburger {
+        display: flex;
+    }
+
+    .left .closeHamburger {
+        display: flex;
+    }
+
+}
+
+@media (width <= 600px) {
+    .left {
+        width: 70vw;
+    }
+}
+
+@media (width <= 480px) {
+    .left {
+        width: 100vw;
+    }
+}
+
+@media (width <= 320px) {
+    .left {
+        width: 100vw;
+    }
+}

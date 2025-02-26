@@ -6,7 +6,7 @@
     <title>Spotify Clone</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="responsive.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -23,9 +23,13 @@
 
       <div class="left">
         <!-- home section of the application -->
-
+        
         <div class="home bg-gray p1 rounded left-items">
           <div class="logo flex">
+            <!-- close hamBurger button for small screens -->
+             <div class="closeHamburger">
+              <i class="fa-solid fa-circle-xmark"></i>
+             </div>
             <img src="svg/logo.svg" alt="Spotify logo" class="invert" />
             <h5>Spotify</h5>
           </div>
@@ -47,7 +51,6 @@
           <div class="libraryItems">
             <ul id="playlist">
               <!-- Song list inside left side bar -->
-              
             </ul>
           </div>
           <div class="libraryFooter">
@@ -67,6 +70,9 @@
         <!-- header of the application -->
         <div class="rightHeader rounded">
           <div class="nav">
+            <div id="hamBurger" class="hamburger">
+              <i class="fa-solid fa-bars"></i>
+            </div>
             <i class="fa-solid fa-chevron-left"></i>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
@@ -119,23 +125,21 @@
             <div id="seekBarCircle" class="circle"></div>
           </div>
           <div class="playerElements">
-
             <div class="playerElement currentSongTitle">
               <h3></h3>
             </div>
-  
+
             <div class="playerElement playButtons">
-              <i id= "previousBtn" class="fa-solid fa-circle-chevron-left"></i>
+              <i id="previousBtn" class="fa-solid fa-circle-chevron-left"></i>
               <i id="playBtn" class="fa-solid fa-play"></i>
               <i id="nextBtn" class="fa-solid fa-circle-chevron-right"></i>
             </div>
-  
+
             <div class="playerElement songTime">
               <h3 id="currSongTime">00:00 / 00:00</h3>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
     <script src="script.js"></script>
