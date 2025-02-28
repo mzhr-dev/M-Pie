@@ -1,14 +1,23 @@
 
-@media (width <= 1200px) {
+@media (width <= 1400px) {
     .left {
-        width: 30vw;
+        width: 30%vw;
     }
 
     .right {
-        width: 70vw;
+        width: 70%;
     }
   }
 
+  @media (width <= 1024px) {
+    .left {
+        width: 35%;
+    }
+
+    .right {
+        width: 65%;
+    }
+  }
 
 @media (width <= 900px) {    
 
@@ -18,7 +27,7 @@
     }
 
     .left {
-        background-color: rgb(29, 29, 29);
+        background-color: rgba(49, 49, 49, 0.63);
         padding: 10px;
         width: 50vw;
         height: 100%;
@@ -45,6 +54,48 @@
     .left {
         width: 70vw;
     }
+
+    .playerElements {
+        margin-top: 20px;
+        flex-direction: column;
+        row-gap: 15px;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+    }
+
+    .currentSongTitle {
+        width: 80%;
+        order: 1;
+      }
+
+      .currentSongTitle h3 {
+        width: 100%;
+        text-align: center;
+      }
+
+    .songTime {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        order: 2;
+    }
+    .songTime h3 {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .playButtons {
+        order: 3;
+    }
+
+    .seekbar {
+        order: 2;
+    }
+
 }
 
 @media (width <= 480px) {

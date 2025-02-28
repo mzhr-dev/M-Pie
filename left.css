@@ -1,0 +1,248 @@
+/* Styling left side of the container */
+
+.left {
+    width: 30%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+  
+  .left .closeHamburger {
+    cursor: pointer;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 10px;
+    color: var(--accent-color);
+    flex-grow: 0;
+    cursor: pointer;
+  }
+  
+  .left .closeHamburger i {
+    transition: all 0.3s ease;
+  }
+  
+  .left .closeHamburger i:hover {
+    color: var(--secondary-color);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--grey-color);
+    border-radius: 5px;
+  }
+  
+  .logo img {
+    width: 30px;
+    cursor: pointer;
+    flex-grow: 0;
+  }
+  
+  .logo h5 {
+    color: var(--primary-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    flex-grow: 1;
+  }
+  
+  .home {
+    flex-grow: 0;
+  }
+  
+  .home ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  
+  .home ul li {
+    color: var(--text-color);
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    margin-bottom: 5px;
+    gap: 15px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .home ul li i {
+    margin-right: 10px;
+    font-size: large;
+  }
+  
+  .library {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    flex-grow: 1;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+  }
+  
+  .heading {
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+    gap: 10px;
+    flex-grow: 0;
+    position: sticky;
+    top: 0px;
+  }
+  
+  .heading img {
+    width: 25px;
+  }
+  
+  .heading h3 {
+    color: var(--primary-color);
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+  }
+
+  .library-icon {
+    color: var(--accent-color);
+    width: 24px;
+    height: 24px;
+  }
+
+  .libraryItems {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .libraryItems ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    justify-content: left;
+    width: 100%;
+    padding: 0px 5px;
+  }
+  
+  .libraryItems ul li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .libraryItems .fa-music {
+    font-size: large;
+    padding: 8px;
+    transition: all 0.2s ease;
+    text-align: center;
+    color: var(--grey-color);
+    background-color: var(--text-color);
+    border-radius: 5px;
+    flex-grow: 0;
+  }
+  
+  .libraryItems ul li:hover .fa-music {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+    border-radius: 5px;
+  }
+  
+  .songListInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px 0px 5px 0px;
+    flex-grow: 1;
+    max-width: 70%;
+  }
+  
+  .songListInfo h3 {
+    color: lightgrey;
+    font-family: "poppins", sans-serif;
+    font-weight: 550;
+    font-size: 0.9rem;
+    transition: all 0.3 ease;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis (...) when the text overflows */
+  }
+  
+  .libraryItems ul li:hover h3 {
+    color: white;
+  }
+  .songListInfo p {
+    max-width: 8rem;
+    color: grey;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  #libraryPlayBtn {
+    font-size: medium;
+    color: grey;
+    padding: 10px;
+    transition: all 0.3s ease;
+    flex-grow: 0;
+  }
+  
+  .libraryItems ul li:hover #libraryPlayBtn {
+    color: #1db954;
+  }
+  
+  /* styling footer section inside library */
+  
+  .libraryFooter {
+    margin-bottom: auto;
+    flex-grow: 0;
+    padding: 5px 0px;
+    position: sticky;
+    bottom: 0px;
+    padding: 10px 5px 10px 5px;
+  }
+  
+  .libraryFooter ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+    justify-content: space-around;
+  }
+  
+  .libraryFooter ul li {
+    color: grey;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600px;
+    transition: all 0.3s ease;
+  }
+  
+  .libraryFooter ul li:hover {
+    color: white;
+  }
+  

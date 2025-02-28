@@ -4,30 +4,35 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
-  background: #000;
+  background: var(--background-color);
   padding: 16px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow);
   align-items: center;
   margin-bottom: auto;
   flex-grow: 0;
   border-radius: 10px;
+  flex-shrink: 1;
 }
+
 .playerElements {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 12px;
+  flex-shrink: 1;
+  order: 2;
 }
 
 .currentSongTitle {
   width: 30%;
+  order: 1;
 }
 
 .currentSongTitle h3 {
   width: 100%;
   font-size: 1rem;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 400;
   overflow: hidden;
   white-space: nowrap;
@@ -42,6 +47,7 @@
   gap: 25px;
   width: 40%;
   transition: all 0.3ms ease;
+  order: 2;
 }
 
 #playBtn {
@@ -58,13 +64,13 @@
 
 .playButtons i {
   font-size: 22px;
-  color: #00ff88;
+  color: var(--primary-color);
   cursor: pointer;
   transition: 0.3s;
 }
 
 .playButtons i:hover {
-  color: #008844;
+  color: var(--secondary-color);
 }
 
 .songTime {
@@ -74,10 +80,11 @@
   align-items: flex-end;
   gap: 12px;
   width: 30%;
+  order: 3;
 }
 
 .songTime h3 {
-  color: #fff;
+  color: var(--text-color);
   font-size: small;
   font-weight: 500;
   text-align: right;
@@ -89,14 +96,15 @@
   justify-content: end;
   align-items: center;
   gap: 10px;
-  background: #000;
+  background: var(--background-color);
   padding: 8px 0px;
   border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 
 .volume i {
-  color: #fff;
+  color: var(--text-color);
   font-size: 16px;
 }
 
@@ -104,7 +112,7 @@
   -webkit-appearance: none;
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #00ff88, #008844);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   border-radius: 4px;
   outline: none;
   transition: 0.3s;
@@ -114,7 +122,7 @@
   -webkit-appearance: none;
   width: 12px;
   height: 12px;
-  background: #fff;
+  background: var(--text-color);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -122,19 +130,20 @@
 .slider::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: #fff;
+  background: var(--text-color);
   border-radius: 50%;
   cursor: pointer;
 }
 
-/* styling the seekbar */
+/* Styling the seekbar */
 .seekBar {
-  display: flex;;
-  width: 100%; /* Full width of the container */
-  height: 4px; /* Height of the seek bar track */
-  background: #222;/* Track color */
+  order: 1;
+  display: flex;
+  width: 100%;
+  height: 4px;
+  background: var(--grey-color);
   position: relative;
-  margin-top: 10px; /* Space between buttons and seek bar */
+  margin-top: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 4px;
@@ -143,18 +152,18 @@
 }
 
 .seekBar:hover {
-  background-color: #1db954;
+  background-color: var(--accent-color);
 }
 
 .seekBar .circle {
   height: 12px;
   width: 12px;
-  background: #1db954; /* Handle color */
-  border-radius: 50%; /* Perfect circle */
+  background: var(--accent-color);
+  border-radius: 50%;
   position: absolute;
-  top: 50%; /* Center vertically */
-  left: 0; /* Start from the left */
-  transform: translateY(-50%); /* Adjust for vertical centering */
-  cursor: pointer; /* Indicate it's draggable */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
   transition: all 0.3s ease;
 }

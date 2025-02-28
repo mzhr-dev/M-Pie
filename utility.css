@@ -1,5 +1,17 @@
 /* All these classes are utility classes. They are used to apply some common styles to the elements */
 
+:root {
+    --primary-color: #00ff88;
+    --secondary-color: #008844;
+    --background-color: #000;
+    --text-color: #fff;
+    --slider-background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    --box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    --accent-color: #1db954;
+    --grey-color: #444;
+  }
+
+  
 .flex {
     display: flex;
 }
@@ -17,7 +29,7 @@
 }
 
 .bg-black {
-    background-color: black;
+    background-color: var(--grey-color);
     color: white;
 }
 
@@ -26,7 +38,7 @@
 }
 
 .bg-gray {
-    background-color: #2e2e2e;
+    background-color: var(--background-color);
 }
 
 .green {
@@ -71,7 +83,7 @@
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--grey-color);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
