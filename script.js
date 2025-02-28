@@ -129,3 +129,11 @@ async function main() {
 
 main();
 setInterval(refreshSongs, 5000); // Check for new songs every 5 seconds
+
+// Volume controller
+let volumeSlider = document.getElementById('volRange');
+volumeSlider.addEventListener('input', () => {
+  let volume = volumeSlider.value/100;
+  console.log(volume);
+  currentSong.volume = volume;
+});

@@ -1,0 +1,160 @@
+/* Media Player*/
+.mediaPlayer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #000;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  margin-bottom: auto;
+  flex-grow: 0;
+  border-radius: 10px;
+}
+.playerElements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.currentSongTitle {
+  width: 30%;
+}
+
+.currentSongTitle h3 {
+  width: 100%;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 40%;
+  transition: all 0.3ms ease;
+}
+
+#playBtn {
+  font-size: 35px;
+  cursor: pointer;
+  width: 18px;
+}
+
+.playButtons #previousBtn,
+#nextBtn {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.playButtons i {
+  font-size: 22px;
+  color: #00ff88;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.playButtons i:hover {
+  color: #008844;
+}
+
+.songTime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 12px;
+  width: 30%;
+}
+
+.songTime h3 {
+  color: #fff;
+  font-size: small;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Minimalist Volume Control */
+.volume {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  padding: 8px 0px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.volume i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff88, #008844);
+  border-radius: 4px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* styling the seekbar */
+.seekBar {
+  display: flex;;
+  width: 100%; /* Full width of the container */
+  height: 4px; /* Height of the seek bar track */
+  background: #222;/* Track color */
+  position: relative;
+  margin-top: 10px; /* Space between buttons and seek bar */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 1;
+}
+
+.seekBar:hover {
+  background-color: #1db954;
+}
+
+.seekBar .circle {
+  height: 12px;
+  width: 12px;
+  background: #1db954; /* Handle color */
+  border-radius: 50%; /* Perfect circle */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0; /* Start from the left */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  cursor: pointer; /* Indicate it's draggable */
+  transition: all 0.3s ease;
+}

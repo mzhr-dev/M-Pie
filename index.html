@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
     <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="music-player.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -23,13 +24,13 @@
 
       <div class="left">
         <!-- home section of the application -->
-        
+
         <div class="home bg-gray p1 rounded left-items">
           <div class="logo flex">
             <!-- close hamBurger button for small screens -->
-             <div class="closeHamburger">
+            <div class="closeHamburger">
               <i class="fa-solid fa-circle-xmark"></i>
-             </div>
+            </div>
             <img src="svg/logo.svg" alt="Spotify logo" class="invert" />
             <h5>Spotify</h5>
           </div>
@@ -125,6 +126,7 @@
             <div id="seekBarCircle" class="circle"></div>
           </div>
           <div class="playerElements">
+            <!-- Current song title -->
             <div class="playerElement currentSongTitle">
               <h3></h3>
             </div>
@@ -135,8 +137,15 @@
               <i id="nextBtn" class="fa-solid fa-circle-chevron-right"></i>
             </div>
 
+            <!-- Current song time -->
             <div class="playerElement songTime">
               <h3 id="currSongTime">00:00 / 00:00</h3>
+
+              <!-- volume control -->
+              <div class="volume">
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" name="volume" id="volRange" class="slider" />
+              </div>
             </div>
           </div>
         </div>

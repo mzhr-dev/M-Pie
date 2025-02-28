@@ -1,34 +1,14 @@
 /* Adding the "Roboto" font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-/* For WebKit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  border-radius: 5px; /* Added base radius */
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #404040;
-}
-
-/* For Firefox */
+/*
+/* setyling the default scroll bar 
 * {
+  scroll-snap-type: proximity;
+  scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #333 #1a1a1a;
-  border-radius: 5px; /* This will affect Firefox's scrollbar but NOT its shape */
-}
-
+  scrollbar-color: rgba(179, 179, 179, 0.219) rgba(0, 0, 0, 0);
+  border-radius: 10px; /* This will affect Firefox's scrollbar but NOT its shape */
 
 /* removing default margin and padding and setting default font*/
 * {
@@ -62,7 +42,6 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  
 }
 
 .left .closeHamburger {
@@ -70,9 +49,9 @@ body {
   font-size: large;
   justify-content: center;
   align-items: center;
-  position:absolute;
+  position: absolute;
   top: 15px;
-  right:15px;
+  right: 15px;
   display: none;
   padding: 10px;
   color: lightgray;
@@ -166,8 +145,6 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   max-width: 100%;
-
-  
 }
 
 .libraryItems ul {
@@ -226,12 +203,12 @@ body {
   font-weight: 550;
   font-size: 0.9rem;
   transition: all 0.3 ease;
-  white-space: nowrap;        /* Prevent text from wrapping */
-  overflow: hidden;           /* Hide overflowed text */
-  text-overflow: ellipsis;    /* Add ellipsis (...) when the text overflows */  
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add ellipsis (...) when the text overflows */
 }
 
-.libraryItems ul li:hover h3{
+.libraryItems ul li:hover h3 {
   color: white;
 }
 .songListInfo p {
@@ -429,14 +406,14 @@ body {
   align-items: center;
   padding: 8px;
   background: linear-gradient(135deg, #11998e, #38ef7d);
-  border-radius: 50%;
+  border-radius: 5px;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: absolute;
   top: 50%;
-  left: 80%;
+  left: 81%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
@@ -450,7 +427,7 @@ body {
 
 @keyframes playButtonMove {
   0% {
-    transform: translateX(-50%) translateY(-20px); /* Start above */
+    transform: translateX(-50%) translateY(-40px); /* Start above */
   }
 
   50% {
@@ -459,102 +436,4 @@ body {
   100% {
     transform: translateX(-50%) translateY(0); /* End at the original position */
   }
-}
-
-
-/* Styling Music Player of the Application*/
-.mediaPlayer {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  background-color: rgb(211, 211, 211);
-  align-items: center;
-  justify-content: center;
-  padding: 10px 10px;
-  margin-bottom: auto;
-  flex-grow: 0;
-
-}
-.playerElements {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 0px 0px 5px 5px;
-}
-
-.currentSongTitle {
-  width: 30%;
-}
-
-.currentSongTitle h3 {
-  width: 100%;
-  font-size: small;
-  color: grey;
-  font-weight: 400;
-  overflow: hidden;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.playButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  width: 40%;
-}
-
-#playBtn {
-  font-size: 35px;
-  cursor: pointer;
-  color: #4caf50;
-  width: 18px;
-}
-
-.playButtons .fa-circle-chevron-left, .fa-circle-chevron-right {
-  font-size: 25px;
-  cursor: pointer;
-  color: rgb(70, 70, 70);
-}
-
-.songTime {
-  width: 30%;
-}
-
-.songTime h3{
-  width: 100%;
-  color: grey;
-  font-size: small;
-  font-weight: 500;
-  text-align: right;
-}
-
-.seekBar {
-  width: 100%; /* Full width of the container */
-  height: 4px; /* Height of the seek bar track */
-  background-color: rgb(48, 48, 48); /* Track color */
-  position: relative;
-  margin-top: 10px; /* Space between buttons and seek bar */
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.seekBar:hover {
-  background-color: #1db954;
-}
-
-.seekBar .circle {
-  height: 15px;
-  width: 15px;
-  background-color: #1db954; /* Handle color */
-  border-radius: 50%; /* Perfect circle */
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 0; /* Start from the left */
-  transform: translateY(-50%); /* Adjust for vertical centering */
-  cursor: pointer; /* Indicate it's draggable */
-  transition: all 0.2s ease;
 }

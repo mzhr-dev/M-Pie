@@ -55,3 +55,24 @@
     overflow: hidden;      /* Hides overflowed content */
     text-overflow: ellipsis; /* Adds "..." if text is too long */
   }
+
+  /* Customizing the scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
