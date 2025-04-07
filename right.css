@@ -1,10 +1,11 @@
 /* Styling right side of the container */
 
 .right {
-    width: 70%;
+    width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
   }
   
   .rightHeader {
@@ -46,7 +47,7 @@
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
   } 
@@ -66,6 +67,7 @@
     overflow-y: auto;
     align-content: flex-start;
     flex-grow: 1;
+    justify-content: center;
   }
   
   .spotifyPlaylist h1 {
@@ -77,12 +79,14 @@
   }
   
   .cardContainer {
+    margin: auto;
     display: flex;
-    column-gap: 10px;
-    row-gap: 15px;
+    justify-content: center;
+    justify-items: center;
+    width: 95%;
     flex-wrap: wrap;
     overflow-y: auto;
-    flex-grow: 1;
+    gap: 10px;
   }
   
   .card {

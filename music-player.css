@@ -3,9 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 10px;
   background: var(--background-color);
-  padding: 16px;
+  padding: 10px;
   box-shadow: var(--box-shadow);
   align-items: center;
   margin-bottom: auto;
@@ -143,7 +142,6 @@
   height: 4px;
   background: var(--grey-color);
   position: relative;
-  margin-top: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
   border-radius: 4px;

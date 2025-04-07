@@ -1,11 +1,12 @@
 /* Styling left side of the container */
 
 .left {
-    width: 30%;
+    width: 25%;
     max-height: 100%;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    flex-grow: 0;
   }
   
   .left .closeHamburger {

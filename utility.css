@@ -1,14 +1,14 @@
 /* All these classes are utility classes. They are used to apply some common styles to the elements */
 
 :root {
-    --primary-color: #00ff88;
-    --secondary-color: #008844;
-    --background-color: #000;
-    --text-color: #fff;
+    --primary-color: #E0E0E0;
+    --secondary-color: #00ADB5;
+    --background-color: #121212;
+    --text-color: #E0E0E0;
     --slider-background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     --box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    --accent-color: #1db954;
-    --grey-color: #444;
+    --accent-color: #00ADB5;
+    --grey-color: #1E1E1E;
   }
 
   
@@ -24,25 +24,13 @@
     align-items: center;
 }
 
-.border {
-    border: 1px solid red;
-}
-
 .bg-black {
     background-color: var(--grey-color);
     color: white;
 }
 
-.invert {
-    filter: invert(1);
-}
-
 .bg-gray {
     background-color: var(--background-color);
-}
-
-.green {
-    color: #1db954;
 }
 
 .p1 {
